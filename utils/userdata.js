@@ -1,4 +1,4 @@
-const names = [
+const username = [
     'Aaran',
     'Aaren',
     'Smith',
@@ -39,6 +39,49 @@ const names = [
     'Jared',
     'Courtney',
     'Gillian',
+  ];
+
+  const email = [
+    'Aaran@gmail.com',
+    'Aaren@hotmail.com',
+    'Smith@yahoo.com',
+    'Jones@email.com',
+    'Coollastname@gmail.com',
+    'enter_name_here@yahoo.com',
+    'Ze@hotmail.com',
+    'Zechariah@gmail.com',
+    'Zeek@yahoo.com',
+    'Zeeshan@email.com',
+    'Zeid@gmail.com',
+    'Zein@yahoo.com',
+    'Zen@hotmail.com',
+    'Zendel@gmail.com',
+    'Zenith@yahoo.com',
+    'Zennon@email.com',
+    'Zeph@gmail.com',
+    'Zerah@yahoo.com',
+    'Zhen@hotmail.com',
+    'Zhi@gmail.com',
+    'Zhong@yahoo.com',
+    'Zhuo@email.com',
+    'Zi@hotmail.com',
+    'Zidane@gmail.com',
+    'Zijie@yahoo.com',
+    'Zinedine@email.com',
+    'Zion@gmail.com',
+    'Zishan@yahoo.com',
+    'Ziya@hotmail.com',
+    'Ziyaan@gmail.com',
+    'Zohaib@yahoo.com',
+    'Zohair@email.com',
+    'Zoubaeir@gmail.com',
+    'Zubair@yahoo.com',
+    'Zubayr@hotmail.com',
+    'Zuriel@gmail.com',
+    'Xander@yahoo.com',
+    'Jared@gmail.com',
+    'Courtney@yahoo.com',
+    'Gillian@email.com'
   ];
   
   const thoughts = [
