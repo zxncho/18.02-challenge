@@ -1,4 +1,4 @@
-const thoughts = 
+const text = 
 [
     'Decision Trackers are awesome',
     'Find My Phone is a useful app',
@@ -15,6 +15,8 @@ const thoughts =
     'Compass is never opened',
     'Firefox is great for privacy',
 ];
+
+const createdAt = [];
 
 const reactions = 
 [
@@ -47,21 +49,11 @@ const reactions =
     'quis',
 ];
 
-const getThoughts = () =>
-{
+const createThought = (randomThoughts) => {
 
 };
 
-const getThought = () => 
-{
-
-};
-
-const createThought = (thoughts) => {
-
-};
-
-const updateThought = (arr) => 
+const createReactions = (arr) => 
 {
 
 };
@@ -84,9 +76,7 @@ const removeReaction = (int) =>
 // Export the functions for use in seed.js
 module.exports = {
     getThoughts,
-    getThought,
     createThought,
-    updateThought,
     deleteThought,
     addReaction,
     removeReaction,

@@ -1,34 +1,22 @@
+const { Timestamp } = require('mongodb');
 const connection = require('../config/connection');
 const { Thought, User } = require('../models');
 const {
-    getUsers,
-    getUser,
-    createUser,
-    updateUser,
-    deleteUser,
-    addFriend,
-    removeFriend,
-} = require('./userdata');
-
-const  
-{
-    getThoughts,
-    getThought,
-    createThought,
-    updateThought,
-    deleteThought,
-    addReaction,
-    removeReaction, 
-} = require('./thoughts');
+    createUsers,
+    createFriends,
+    createThoughts,
+    createReactions,
+    createEmails,
+} = require('./userdata','./thoughts');
 
 // Start the seeding runtime timer
 console.time('seeding');
 
 // Creates a connection to mongodb
 connection.once('open', async () => {
-  // Delete the collections if they exist
+  // Delete the collections if they exist thoughts and users here are the names of the tables
   let thoughtCheck = await connection.db.socialmedia({ name: 'thoughts' }).toArray();
-  if (thoughtCheckCheck.length) {
+  if (thoughtCheck.length) {
     await connection.dropCollection('thoughts');
   }
 
@@ -38,31 +26,50 @@ connection.once('open', async () => {
   }
 
   // Empty arrays for randomly generated posts and comments
-  const thoughts = [...getThoughts];
-  const users = [];
+  const randomThoughts = [...createThought];
+  const randomUsers = [...createUser];
 
 
-  // Makes comments array
-  const makePost = (text) => {
-    posts.push({
+  // Makes thoughts array
+  const makeThought = (text) => {
+    randomThoughts.push({
       text,
-      username: getRandomName().split(' ')[0],
-      comments: [comments[genRandomIndex(comments)]._id],
+      username: getRandomName(userlist),
+      reactions: createReactions(),
+      createdAt: Timestamp,
     });
   };
 
   // Wait for the comments to be inserted into the database
-  await Comment.collection.insertMany(comments);
+  await Thought.collection.insertMany(randomThoughts);
 
   // For each of the comments that exist, make a random post of 10 words
-  comments.forEach(() => makePost(getRandomPost(10)));
+  randomThoughts.forEach(() => makeThought(createThoughts));
 
   // Wait for the posts array to be inserted into the database
-  await Post.collection.insertMany(posts);
+  await Thought.collection.insertMany(randomThoughts);
+
+  const makeUser = () => {
+    randomUsers.push({
+        username: getRandomName(),
+        email: createEmails(),
+        thoughts:createThoughts(),
+        friends: createFriends(),
+    });
+  };
+
+  await User.collection.insertMany(randomUsers);
+
+  // For each of the comments that exist, make a random post of 10 words
+  randomUsers.forEach(() => makeUser());
+
+  // Wait for the posts array to be inserted into the database
+  await User.collection.insertMany(randomUsers);
+
 
   // Log out a pretty table for comments and posts
-  console.table(comments);
-  console.table(posts);
+  console.table(randomThoughts);
+  console.table(randomUsers);
   console.timeEnd('seeding complete 🌱');
   process.exit(0);
 });
