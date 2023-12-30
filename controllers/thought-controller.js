@@ -90,7 +90,7 @@ const thoughtController = {
   },
 
   // add a reaction to a thought
-  async addReaction(req, res) {
+  async createReaction(req, res) {
     try {
       const thoughts = await Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
