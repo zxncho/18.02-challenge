@@ -2,7 +2,7 @@ const { MongoClient } = require('mongodb');
 const express = require('express');
 const routes = require('./routes');
 const { Schema } = require('mongoose');
-const connectionStringURI = `mongodb://127.0.0.1:27017/socialmedia`;
+const connectionStringURI = `mongodb://127.0.0.1:27017`;
 const client = new MongoClient(connectionStringURI);
 
 const PORT = process.env.PORT || 3001;
